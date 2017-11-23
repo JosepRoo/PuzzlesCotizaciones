@@ -1,0 +1,22 @@
+<div class="row border-bottom" id="logout">
+  <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+        <span ng-show="logeo" minimaliza-sidebar></span>
+        
+    </div>
+    <ul class="nav navbar-top-links navbar-right" ng-show="logeo">
+      <li>
+        <a href="" id="logoutButton">
+          <i class="fa fa-sign-out"></i> Cerrar Sesión
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<script type="text/javascript">
+  $( "#logoutButton" ).click(function() {
+    localStorage.clear();
+    location.reload();
+});
+</script>

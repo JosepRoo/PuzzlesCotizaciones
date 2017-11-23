@@ -1,0 +1,52 @@
+Inserta usuario
+INSERT INTO `usuario` (`nombreUsuario`, `correoUsuario`, `contraseniaUsuario`) VALUES ('sergio5405', 'sergio54058@gmail.com', 'contrasenia123')
+
+REGISTRO:
+localhost/api.php/registro/
+curl -H "Content-Type: application/json" -X POST -d '{"nombre":"sergi2o5403","correo":"sergio154012@gmail.com", "contrasenia": "contrasenia123"}' http://localhost/api.php/registro
+{"success":true,"records":1,"root":[{"idUsuario":"18","nombreUsuario":"sergi2o5403","correoUsuario":"sergio154012@gmail.com","contraseniaUsuario":"contrasenia123","puntosUsuario":"0","estadoRegistro":"0","creadoUsuario":"2017-10-29 23:34:37","actualizadoUsuario":"2017-10-29 23:34:37"}]}
+{"success":false,"records":1,"root":null,"msg":"Error preregistro: Correo ya registrado"}
+{"success":false,"records":1,"root":null,"msg":"Error preregistro: Usuario ya registrado"}
+
+LOGIN:
+localhost/api.php/login/
+curl -H "Content-Type: application/json" -H "AUTH_USER: sergio5405" -H "AUTH_PW: contrasenia123" http://localhost/api.php/login
+{"success":true,"records":1,"root":[{"idTienda":"1","idUsuario":"3","nombreUsuario":"sergio5405","correoUsuario":"sergio54058@gmail.com","puntos":"0","estadoUsuario":"0"}]}
+{"success":false,"records":0,"root":null,"msg":"Error login: Usuario o contrasenia incorrecta"}
+
+EMPRESAS:
+getEmpresas:
+localhost/api.php/empresas/{idTienda}
+curl -H "Content-Type: application/json" -H "AUTH_USER: sergio5405" -H "AUTH_PW: contrasenia123" http://localhost/api.php/empresas/1
+{"success":true,"records":2,"root":[{"id":"1","nombre":"Prueba Coca Cola","contacto":"SERGIO HERNAND","color":"FF0000","datos":""},{"id":"3","nombre":"Prueba Sabritas","contacto":"Sharon Bec","color":"FFFF00","datos":""}]}
+{"success":false,"records":0,"root":null,"msg":"Error getEmpresas: Informacion de empresas no valida"}
+
+CONTENIDO:
+obtenerContenido:
+localhost/api.php/seccion/contenido/{idTienda}/{idEmpresa}/{tipoContenido}
+curl -H "Content-Type: application/json" -H "AUTH_USER: sergio5405" -H "AUTH_PW: contrasenia123" http://localhost/api.php/seccion/contenido/1/2/1
+{"success":true,"records":1,"root":[{"id":"1","titulo":"VideoEmpleado1","asset":null,"puntos":"10"}]}
+{"success":false,"records":0,"root":null,"msg":"Error getInformacionSeccion: Informacion de contenido no valida"}
+
+setVisto:
+localhost/api.php/seccion/setVisto/{idTienda}/{idContenido}
+curl -H "Content-Type: application/json" -H "AUTH_USER: sergio5405" -H "AUTH_PW: contrasenia123" http://localhost/api.php/seccion/setVisto/1/2
+{"success":true}
+{"success":false,"msg":"Error setContenidoValidacion: Informacion de contenido no valida"}
+
+localhost/api.php/seccion/setNoVisto/{idTienda}/{idContenido}
+curl -H "Content-Type: application/json" -H "AUTH_USER: sergio5405" -H "AUTH_PW: contrasenia123" http://localhost/api.php/seccion/setNoVisto/1/2
+{"success":true}
+{"success":false,"msg":"Error setContenidoValidacion: Informacion de contenido no valida"}
+
+localhost/api.php/seccion/setContestado/{idTienda}/{idContenido}
+curl -H "Content-Type: application/json" -H "AUTH_USER: sergio5405" -H "AUTH_PW: contrasenia123" http://localhost/api.php/seccion/setContestado/1/2
+{"success":true}
+{"success":false,"msg":"Error setContenidoValidacion: Informacion de contenido no valida"}
+
+PREGUNTAS
+obtenerPreguntas:
+localhost/api.php/preguntas/{idContenido}
+curl -H "Content-Type: application/json" -H "AUTH_USER: sergio5405" -H "AUTH_PW: contrasenia123" http://localhost/api.php/preguntas/1
+{"success":true,"records":3,"root":[{"id":"1","pregunta":"¿Te ha parecido entretenido?","tipo":"1"},{"id":"2","pregunta":"¿Te gustó la encuesta?","tipo":"1"},{"id":"3","pregunta":"¿La recomendarías?","tipo":"1"}]}
+{"success":false,"records":0,"root":null,"msg":"Error getPreguntas: Informacion de preguntas no valida"}

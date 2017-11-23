@@ -1,0 +1,380 @@
+<div class="wrapper wrapper-content animated fadeInRight" >
+
+  <div class="row" ng-show="validate">
+    <div class="col-md-10 col-md-offset-1">
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>
+              Nuevo Proyecto
+          </h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Nombre</label>
+            <input class="form-control" type="text" ng-model="proyecto.nombre">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Descripcion</label>
+            <input class="form-control" type="text" ng-model="proyecto.descripcion">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h3>
+              Seleccione los modulos que tiene su sistema:
+          </h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card" style="box-shadow: 5px 5px 5px 5px #888888;" id="logeo">
+            <img class="card-img-top" src="img/img1.png" >
+            <div class="card-block">
+                <h4 class="card-title text-center">Sistema de Logeo</h4>
+                <div class="col-md-6" style="padding-left: 5px;padding-right: 5px;">
+                  <button ng-click="sistemaLogeo(1)" class="btn btn-block btn-info">Si</button>
+                </div>
+                <div class="col-md-6" style="padding-left: 5px;padding-right: 5px;">
+                  <button ng-click="sistemaLogeo(0)" class="btn btn-block btn-danger">No</button>
+                  <br>
+                </div>
+                <br>
+                <div class="card-text" ng-show="proyecto.showCamposLogIn">
+                    <div class="form-group">
+                      <label>Parametros por usuario</label>
+                      <select class="form-control" ng-model="proyecto.camposLogIn">
+                        <option value="3">1</option>
+                        <option value="3">2</option>
+                        <option value="3">3</option>
+                        <option value="3">4</option>
+                        <option value="10">5</option>
+                        <option value="10">6</option>
+                        <option value="10">7</option>
+                        <option value="10">8</option>
+                        <option value="10">9</option>
+                        <option value="10">10</option>
+                        <option value="10">11</option>
+                        <option value="10">12</option>
+                        <option value="10">13</option>
+                        <option value="10">14</option>
+                        <option value="10">15</option>
+                        <option value="16">16+</option>
+                      </select>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card" style="box-shadow: 5px 5px 5px 5px #888888;" id="formularios">
+            <img class="card-img-top" src="img/img7.png" >
+            <div class="card-block">
+                <h4 class="card-title text-center">Formularios</h4>
+                <div class="col-md-6" style="padding-left: 5px;padding-right: 5px;">
+                  <button ng-click="formualarios(1)" class="btn btn-block btn-info">Si</button>
+                </div>
+                <div class="col-md-6" style="padding-left: 5px;padding-right: 5px;">
+                  <button ng-click="formualarios(0)" class="btn btn-block btn-danger">No</button>
+                  <br>
+                </div>
+                <br>
+                <div class="card-text" ng-show="proyecto.showCamposFormularios">
+                    <div class="form-group">
+                      <div class="col-md-6">
+                        <label>Numero de Formularios</label>
+                        <select class="form-control" ng-model="proyecto.formularios">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3+</option>
+                        </select>
+                        <br>
+                      </div>
+                      <div class="col-md-6">
+                        <label>Parametros por Formulario</label>
+                        <select class="form-control" ng-model="proyecto.camposFormularios">
+                          <option value="3">1</option>
+                        <option value="3">2</option>
+                        <option value="3">3</option>
+                        <option value="3">4</option>
+                        <option value="10">5</option>
+                        <option value="10">6</option>
+                        <option value="10">7</option>
+                        <option value="10">8</option>
+                        <option value="10">9</option>
+                        <option value="10">10</option>
+                        <option value="10">11</option>
+                        <option value="10">12</option>
+                        <option value="10">13</option>
+                        <option value="10">14</option>
+                        <option value="10">15</option>
+                        <option value="16">16+</option>
+                        </select>
+                        <br>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card" style="box-shadow: 5px 5px 5px 5px #888888;" id="visualizacion">
+            <img class="card-img-top" src="img/img10.png" >
+            <div class="card-block">
+                <h4 class="card-title text-center">Pantalla de Consulta</h4>
+                <div class="col-md-6" style="padding-left: 5px;padding-right: 5px;">
+                  <button ng-click="visualizacion(1)" class="btn btn-block btn-info">Si</button>
+                </div>
+                <div class="col-md-6" style="padding-left: 5px;padding-right: 5px;">
+                  <button ng-click="visualizacion(0)" class="btn btn-block btn-danger">No</button>
+                  <br>
+                </div>
+                <br>
+                <div class="card-text" ng-show="proyecto.showCamposVisualizacion">
+                    <div class="form-group">
+                      <div class="col-md-6">
+                        <label>Numero de Pantallas</label>
+                        <select class="form-control" ng-model="proyecto.visualizacion">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3+</option>
+                        </select>
+                        <br>
+                      </div>
+                      <div class="col-md-6">
+                        <label>Parametros por Consulta</label>
+                        <select class="form-control" type="number" ng-model="proyecto.camposVisualizacion">
+                         <option value="3">1</option>
+                        <option value="3">2</option>
+                        <option value="3">3</option>
+                        <option value="3">4</option>
+                        <option value="10">5</option>
+                        <option value="10">6</option>
+                        <option value="10">7</option>
+                        <option value="10">8</option>
+                        <option value="10">9</option>
+                        <option value="10">10</option>
+                        <option value="10">11</option>
+                        <option value="10">12</option>
+                        <option value="10">13</option>
+                        <option value="10">14</option>
+                        <option value="10">15</option>
+                        <option value="16">16+</option>
+                        </select>
+                        <br>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card" style="box-shadow: 5px 5px 5px 5px #888888;" id="exportacion">
+            <img class="card-img-top" src="img/img12.png" >
+            <div class="card-block">
+                <h4 class="card-title text-center">Modulo para Exportar</h4>
+                <div class="col-md-6" style="padding-left: 5px;padding-right: 5px;">
+                  <button ng-click="exportacion(1)" class="btn btn-block btn-info">Si</button>
+                </div>
+                <div class="col-md-6" style="padding-left: 5px;padding-right: 5px;">
+                  <button ng-click="exportacion(0)" class="btn btn-block btn-danger">No</button>
+                  <br>
+                </div>
+                <br>
+                <div class="card-text" ng-show="proyecto.showCamposExportacion">
+                    <div class="form-group">
+                      <div class="col-md-6">
+                        <label>Numero de Modulos</label>
+                        <select class="form-control" ng-model="proyecto.exportacion">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3+</option>
+                        </select>
+                        <br>
+                      </div>
+                      <div class="col-md-6">
+                        <label>Parametros por Exportación</label>
+                        <select class="form-control" ng-model="proyecto.camposExportacion">
+                         <option value="3">1</option>
+                        <option value="3">2</option>
+                        <option value="3">3</option>
+                        <option value="3">4</option>
+                        <option value="10">5</option>
+                        <option value="10">6</option>
+                        <option value="10">7</option>
+                        <option value="10">8</option>
+                        <option value="10">9</option>
+                        <option value="10">10</option>
+                        <option value="10">11</option>
+                        <option value="10">12</option>
+                        <option value="10">13</option>
+                        <option value="10">14</option>
+                        <option value="10">15</option>
+                        <option value="16">16+</option>
+                        </select>
+                        <br>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card" style="box-shadow: 5px 5px 5px 5px #888888;" id="cohesion">
+            <img class="card-img-top" src="img/img11.png" >
+            <div class="card-block">
+                <h4 class="card-title text-center">Cohesion de Datos</h4>
+                <div class="col-md-6" style="padding-left: 5px;padding-right: 5px;">
+                  <button ng-click="cohesion(1)" class="btn btn-block btn-info">Si</button>
+                </div>
+                <div class="col-md-6" style="padding-left: 5px;padding-right: 5px;">
+                  <button ng-click="cohesion(0)" class="btn btn-block btn-danger">No</button>
+                  <br>
+                </div>
+                <br>
+                <div class="card-text" ng-show="proyecto.showCamposCohesion">
+                    <div class="form-group">
+                      <label>Nivel de Cohesion</label>
+                      <select class="form-control" ng-model="proyecto.camposCohesion">
+                        <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                      </select>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card" style="box-shadow: 5px 5px 5px 5px #888888;" id="api">
+            <img class="card-img-top" src="img/img2.png" >
+            <div class="card-block">
+                <h4 class="card-title text-center">Consulta de APIs</h4>
+                <div class="col-md-6" style="padding-left: 5px;padding-right: 5px;">
+                  <button ng-click="api(1)" class="btn btn-block btn-info">Si</button>
+                </div>
+                <div class="col-md-6" style="padding-left: 5px;padding-right: 5px;">
+                  <button ng-click="api(0)" class="btn btn-block btn-danger">No</button>
+                  <br>
+                </div>
+                <br>
+                <div class="card-text" ng-show="proyecto.showCamposApi">
+                    <div class="form-group">
+                      <label>Numero de APIs</label>
+                      <select class="form-control" type="number" ng-model="proyecto.camposApi">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5+</option>
+                      </select>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-2 col-md-offset-10">
+          <button class="btn btn-block btn-primary" ng-click="calcularPuntosFuncion()">Continuar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" ng-hide="validate">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <label>Contesta las preguntas segun el peso de cada funcionalidad</label>
+        </div>
+        <div class="panel-body">
+          <div class="row" ng-repeat="fun in proyecto.gscAsks">
+            <div class="col-md-9">
+              <label>{{fun.pregunta}}</label>
+            </div>
+            <div class="col-md-3">
+              <select class="form-control" ng-model="fun.valor">
+                <option value="1">Muy Poco</option>
+                <option value="2">Poco</option>
+                <option value="3">Regular</option>
+                <option value="4">Mucho</option>
+                <option value="5">Bastante</option>
+              </select>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-2 col-md-offset-10">
+              <button class="btn btn-block btn-primary" ng-click="calcularVAF()" data-toggle="modal" data-target="#presupuesto">Continuar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<br>
+
+<div class="modal fade" id="presupuesto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Presupuesto</h5>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="fomr-control">
+              <label>Lenguaje de Programacion</label>
+              <select class="form-control" ng-change="presupuesto()" ng-model="proyecto.lenguaje" ng-options="language as language.name for language in languages">
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="fomr-control">
+              <label>Numero de Integrantes</label>
+              <input type="number" ng-change="presupuesto()" class="form-control" ng-model="proyecto.personas">
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row text-center">
+          <div class="col-md-6">
+            <div class="fomr-control">
+              <h2>Costo: {{proyecto.presupuesto | currency}}</h2>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="fomr-control">
+              <h2>Duracion: {{proyecto.duracion | number : 2}} meses</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <button type="button" ng-click="guardar()" data-dismiss="modal" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h2>
+                Proyectos
+            </h2>
+            <br>
+            <div class="row">
+                <div class="col-md-4" ng-repeat="proyecto in proyectos">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <label>{{proyecto.datos.nombre}} - <label style="color:gray">{{proyecto.datos.usuario.empresa}}</label></label>
+                        </div>
+                        <div class="panel-body">
+                            <label>{{proyecto.datos.presupuesto | currency}} en {{proyecto.datos.duracion | number: 2}} Meses</label>
+                            <p>{{proyecto.datos.descripcion}}</p>
+                            <label style="color:gray" class="text-right">{{proyecto.datos.personas}} Integrantes</label>
+                            <p style="color:gray" class="pull-right">Lenguaje: {{proyecto.datos.lenguaje.name}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

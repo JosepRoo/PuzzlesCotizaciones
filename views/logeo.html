@@ -1,0 +1,31 @@
+<div class="wrapper wrapper-content animated fadeInLeft">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12" ng-show="error">
+				<div class="alert alert-warning">
+				  {{errorTexto}}
+				</div>
+			</div>
+			<div class="col-md-4 col-md-offset-4">
+				<form ng-submit="logeo()">
+					<div class="form-group">
+				    <label for="exampleInputEmail1">Correo</label>
+				    <input type="email" ng-model="usuario.correo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su correo">
+				  </div>
+
+				  <div class="form-group">
+				    <label for="exampleInputPassword1">Contraseña</label>
+				    <input type="password" ng-model="usuario.contrasenia" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+				  </div>
+
+				  <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+				  <button ui-sref="index.registro" type="button" class="btn btn-secundary btn-block">Registrarse</button>
+
+				  <br>
+
+				  <a style="color:gray" class="pull-right">Olvide mi Contraseña</a>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
